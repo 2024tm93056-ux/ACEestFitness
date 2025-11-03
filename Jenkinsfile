@@ -22,6 +22,13 @@ pipeline {
     // }
 
     stages {
+        stage('Clean Workspace') {
+            steps {
+                // Clean checkout
+                cleanWs()
+            }
+        }
+
         stage('Setup Python Environment') {
             steps {
                 echo "🔹 Setting up virtual environment and installing dependencies..."
