@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+      docker {
+        image 'python:3.14-slim'
+        args '-v $PWD:/app'
+      }
+    }
 
     environment {
         APP_NAME = "aceest_fitness"
